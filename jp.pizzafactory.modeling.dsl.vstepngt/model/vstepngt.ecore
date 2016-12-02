@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="vstepngt" nsURI="http://www.example.org/vstepngt" nsPrefix="vstepngt">
+  <eClassifiers xsi:type="ecore:EClass" name="Container" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//WorkspaceElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relationship" abstract="true" eSuperTypes="#//WorkspaceElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//Identifiable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Abstraction" eSuperTypes="#//Relationship">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superClass" lowerBound="1"
+        eType="#//Testable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subClass" lowerBound="1"
+        eType="#//Testable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Stereotype" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true" eSuperTypes="#//WorkspaceElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//Identifiable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Identifiable" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Aggregation" eSuperTypes="#//GenericAssociation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" lowerBound="1" eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="member" lowerBound="1"
+        eType="#//Testable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GenericAssociation" abstract="true"
+      eSuperTypes="#//Relationship">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stereotype" eType="#//Stereotype"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Testable" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shortDescription" eType="#//ShortDescription"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRoot" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestAssociation" eSuperTypes="#//GenericAssociation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//Testable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//Testable"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//AssociationType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="ShortDescription" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WorkspaceElement" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="AssociationType">
+    <eLiterals name="COMBINATION"/>
+    <eLiterals name="FRAMING" value="1"/>
+    <eLiterals name="SEQUENCE" value="2"/>
+  </eClassifiers>
+</ecore:EPackage>

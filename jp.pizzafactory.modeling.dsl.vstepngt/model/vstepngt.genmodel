@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/jp.pizzafactory.modeling.dsl.vstepngt/src" creationSubmenus="true"
+    modelPluginID="jp.pizzafactory.modeling.dsl.vstepngt" modelName="Vstepngt" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>vstepngt.ecore</foreignModel>
+  <genPackages prefix="Vstepngt" resource="XMI" disposableProviderFactory="true" ecorePackage="vstepngt.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="vstepngt.ecore#//AssociationType">
+      <genEnumLiterals ecoreEnumLiteral="vstepngt.ecore#//AssociationType/COMBINATION"/>
+      <genEnumLiterals ecoreEnumLiteral="vstepngt.ecore#//AssociationType/FRAMING"/>
+      <genEnumLiterals ecoreEnumLiteral="vstepngt.ecore#//AssociationType/SEQUENCE"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="vstepngt.ecore#//Stereotype"/>
+    <genDataTypes ecoreDataType="vstepngt.ecore#//Identifiable"/>
+    <genDataTypes ecoreDataType="vstepngt.ecore#//ShortDescription"/>
+    <genClasses ecoreClass="vstepngt.ecore#//Container">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference vstepngt.ecore#//Container/elements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vstepngt.ecore#//Container/title"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="vstepngt.ecore#//Relationship">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vstepngt.ecore#//Relationship/name"/>
+    </genClasses>
+    <genClasses ecoreClass="vstepngt.ecore#//Abstraction">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference vstepngt.ecore#//Abstraction/superClass"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference vstepngt.ecore#//Abstraction/subClass"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="vstepngt.ecore#//Component">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vstepngt.ecore#//Component/name"/>
+    </genClasses>
+    <genClasses ecoreClass="vstepngt.ecore#//Aggregation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference vstepngt.ecore#//Aggregation/owner"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference vstepngt.ecore#//Aggregation/member"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="vstepngt.ecore#//GenericAssociation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vstepngt.ecore#//GenericAssociation/stereotype"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="vstepngt.ecore#//Testable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vstepngt.ecore#//Testable/shortDescription"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vstepngt.ecore#//Testable/isRoot"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="vstepngt.ecore#//TestAssociation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference vstepngt.ecore#//TestAssociation/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference vstepngt.ecore#//TestAssociation/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vstepngt.ecore#//TestAssociation/type"/>
+    </genClasses>
+    <genClasses ecoreClass="vstepngt.ecore#//WorkspaceElement"/>
+  </genPackages>
+</genmodel:GenModel>

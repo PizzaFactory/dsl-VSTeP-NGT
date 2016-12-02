@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: jp.pizzafactory.modeling.dsl.vstepngt.ngtext.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: jp.pizzafactory.modeling.dsl.vstepngt.ngtext.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: jp.pizzafactory.modeling.dsl.vstepngt.ngtext,
+ jp.pizzafactory.modeling.dsl.vstepngt,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: jp.pizzafactory.modeling.dsl.vstepngt.ngtext.ide.contentassist.antlr.internal,
+ jp.pizzafactory.modeling.dsl.vstepngt.ngtext.ide.contentassist.antlr
+
